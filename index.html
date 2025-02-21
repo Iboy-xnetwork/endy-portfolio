@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            background-color: #ffffff;
+            overflow: hidden;
+        }
+        .left {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .left h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+        }
+        .left p {
+            font-size: 1.5rem;
+            color: #333;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out 1s forwards;
+        }
+        .social-icons {
+            margin-top: 20px;
+            display: flex;
+        }
+        .social-icons a {
+            margin: 0 15px;
+            font-size: 2.5rem;
+            color: #000;
+            text-decoration: none;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+        .social-icons a:nth-child(1) { animation-delay: 1.5s; }
+        .social-icons a:nth-child(2) { animation-delay: 2s; }
+        .social-icons a:nth-child(3) { animation-delay: 2.5s; }
+        .social-icons a:nth-child(4) { animation-delay: 3s; }
+        
+        .right {
+            width: 50%;
+            background: #000;
+            color: white;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            clip-path: ellipse(100% 85% at 100% 50%);
+        }
+        .right .buttons {
+            margin-bottom: 30px;
+        }
+        .right button {
+            background: none;
+            border: 2px solid white;
+            color: white;
+            padding: 15px 25px;
+            font-size: 1.4rem;
+            margin: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 5px;
+        }
+        .right button:hover {
+            background: white;
+            color: black;
+        }
+        .contact-btn {
+            background: white;
+            color: black;
+            border: none;
+        }
+        .profile-pic {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin-top: 20px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            color: black;
+            padding: 50px;
+            width: 60%;
+            max-width: 700px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            z-index: 10;
+            text-align: left;
+            border-radius: 10px;
+        }
+        .popup button {
+            background: black;
+            color: white;
+            border: none;
+            padding: 12px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <h1 style="font-size: 1.5rem;">Hi, I am</h1>
+        <h1>Endy Mohlola</h1>
+        <p>Software Developer | Android | Web Developer</p>
+        <div class="social-icons">
+            <a href="https://github.com/ST10178848">🔗</a>
+            <a href="https://www.linkedin.com/in/endy-mohlola-424221251">💻</a>
+            <a href="https://www.facebook.com/share/1GRox7Gp9A/?mibextid=wwXIfr">📘</a>
+            <a href="https://www.tiktok.com/@enderson_iboy">🎵</a>
+        </div>
+    </div>
+    <div class="right">
+        <div class="buttons">
+            <button onclick="openPopup('about')">About Me</button>
+            <button onclick="openPopup('skills')">Skills</button>
+            <button onclick="openPopup('projects')">Projects</button>
+            <button class="contact-btn" onclick="openPopup('contact')">Contact Me</button>
+        </div>
+        <img src="p3.jpeg" alt="Endy Mohlola" class="profile-pic">
+    </div>
+    <div id="about" class="popup">
+        <h2>About Me</h2>
+        <p>I completed my Diploma in IT Software Development at Rosebank College, Braamfontein Campus, in 2024. One of my biggest personal projects was MathQuiz, which I developed using Android (Kotlin/Java). I also worked on a Birdwatching App and a Map-based application, where I integrated API keys to enhance functionality.
+
+            Beyond my projects, I am passionate about building innovative solutions, problem-solving, and software development.
+            
+            I completed my high school education at Spartan High School in Kempton Park in 2021.
+            
+            I am currently based in Limpopo and Gauteng, South Africa.</p>
+        <button onclick="closePopup('about')">Close</button>
+    </div>
+    <div id="skills" class="popup">
+        <h2>Skills</h2>
+        <ul>
+            <li>Programming Languages (C#, Java, Kotlin, PHP)</li>
+            <li>Web Development (HTML, CSS, JavaScript, PHP)</li>
+            <li>Database Management (MySQL/phpMyAdmin, Azure SQL)</li>
+            <li>API Integration (Mapbox, Firebase, eBird API)</li>
+            <li>Software Testing & Debugging</li>
+            <li>Version Control: GitHub, Git</li>
+        </ul>
+        <button onclick="closePopup('skills')">Close</button>
+    </div>
+    <div id="projects" class="popup">
+        <h2>Projects</h2>
+        <h3>Birdwatching App</h3>
+        <p>Developed an interactive map using Mapbox to display birding hotspots.</p>
+        <h3>MathQuiz App</h3>
+        <p>Quiz-based app to enhance math skills. <a href="https://www.tiktok.com/@enderson_iboy">View on TikTok</a></p>
+        <h3>Map-Based Location App</h3>
+        <p>Used API key to track live location and display maps.</p>
+        <h3>Website Store for Clothes</h3>
+        <p>PHP-based web app with login and registration. Used phpMyAdmin for database management.</p>
+        <h3>Receipt Management Tool</h3>
+        <p>Project for managing receipts and transactionsits also on LinkedIn</p>
+        <h3>Other Projects</h3>
+        <p>More on <a href="https://www.linkedin.com/in/endy-mohlola-424221251">LinkedIn</a> and <a href="https://github.com/ST10178848">GitHub</a> and on  my Student Databse.</p>
+        <button onclick="closePopup('projects')">Close</button>
+    </div>
+    <div id="contact" class="popup">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:deandie17@gmail.com">deandie17@gmail.com</a></p>
+        <p>Phone: <a href="tel:+27714298172">071 429 8172</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/endy-mohlola-424221251" target="_blank">Visit my LinkedIn</a></p>
+        <button onclick="closePopup('contact')">Close</button>
+    </div>
+    <script>
+        function openPopup(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+        function closePopup(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+    </script>
+</body>
+</html>
