@@ -1,204 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            height: 100vh;
-            background-color: #ffffff;
-            overflow: hidden;
-        }
-        .left {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            animation: fadeIn 2s ease-in-out;
-        }
-        .left h1 {
-            font-size: 4rem;
-            margin-bottom: 10px;
-        }
-        .left p {
-            font-size: 1.5rem;
-            color: #333;
-            opacity: 0;
-            animation: fadeIn 2s ease-in-out 1s forwards;
-        }
-        .social-icons {
-            margin-top: 20px;
-            display: flex;
-        }
-        .social-icons a {
-            margin: 0 15px;
-            font-size: 2.5rem;
-            color: #000;
-            text-decoration: none;
-            opacity: 0;
-            animation: fadeIn 1s ease-in-out forwards;
-        }
-        .social-icons a:nth-child(1) { animation-delay: 1.5s; }
-        .social-icons a:nth-child(2) { animation-delay: 2s; }
-        .social-icons a:nth-child(3) { animation-delay: 2.5s; }
-        .social-icons a:nth-child(4) { animation-delay: 3s; }
-        
-        .right {
-            width: 50%;
-            background: #000;
-            color: white;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            clip-path: ellipse(100% 85% at 100% 50%);
-        }
-        .right .buttons {
-            margin-bottom: 30px;
-        }
-        .right button {
-            background: none;
-            border: 2px solid white;
-            color: white;
-            padding: 15px 25px;
-            font-size: 1.4rem;
-            margin: 10px;
-            cursor: pointer;
-            transition: 0.3s;
-            border-radius: 5px;
-        }
-        .right button:hover {
-            background: white;
-            color: black;
-        }
-        .contact-btn {
-            background: white;
-            color: black;
-            border: none;
-        }
-        .profile-pic {
-            width: 350px;
-            height: 350px;
-            border-radius: 50%;
-            border: 5px solid white;
-            margin-top: 20px;
-        }
-        .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            color: black;
-            padding: 50px;
-            width: 60%;
-            max-width: 700px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-            z-index: 10;
-            text-align: left;
-            border-radius: 10px;
-        }
-        .popup button {
-            background: black;
-            color: white;
-            border: none;
-            padding: 12px;
-            cursor: pointer;
-            margin-top: 20px;
-            font-size: 1.2rem;
-            border-radius: 5px;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Endy Mohlola | Software Developer Portfolio</title>
+<style>
+  /* Reset & base */
+  * {
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+    font-family: 'Fira Mono', monospace;
+  }
+  body {
+    background: #0f111a;
+    color: #c9d1d9;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  a {
+    color: #58a6ff;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  /* Container */
+  .container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+  }
+
+  /* Header with typing effect */
+  header {
+    margin-top: 60px;
+    text-align: center;
+  }
+  header h1 {
+    font-size: 3.2rem;
+    color: #58a6ff;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 4px solid #58a6ff;
+    width: 0;
+    animation: typing 3s steps(30) forwards, blink 0.75s step-end infinite;
+    margin-bottom: 10px;
+  }
+  header h2 {
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: #8b949e;
+  }
+  @keyframes typing {
+    to {
+      width: 24ch;
+    }
+  }
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+  /* Section styling */
+  section {
+    margin-top: 60px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #30363d;
+  }
+  section:last-child {
+    border-bottom: none;
+  }
+  section h2 {
+    color: #58a6ff;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-left: 4px solid #58a6ff;
+    padding-left: 10px;
+  }
+
+  /* About */
+  #about p {
+    font-size: 1.15rem;
+    color: #adbac7;
+  }
+
+  /* Code block style for skills and experience */
+  .code-block {
+    background: #161b22;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1rem;
+    color: #8b949e;
+    position: relative;
+    overflow-x: auto;
+  }
+  /* Fake code highlights */
+  .keyword { color: #f85149; }
+  .string { color: #56d364; }
+  .comment { color: #6e7781; font-style: italic; }
+  .function { color: #d2a8ff; }
+
+  /* Skills logos container */
+  .skills-logos {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .skills-logos img {
+    width: 50px;
+    filter: grayscale(40%);
+    transition: filter 0.3s ease;
+    cursor: default;
+  }
+  .skills-logos img:hover {
+    filter: none;
+  }
+
+  /* Projects list */
+  ul.projects-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #adbac7;
+  }
+  ul.projects-list li {
+    margin-bottom: 8px;
+  }
+
+  /* Contact section */
+  #contact a {
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 1.2rem;
+  }
+
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Nav fixed bottom */
+  nav {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #161b22dd;
+    border-radius: 30px;
+    padding: 8px 20px;
+    display: flex;
+    gap: 20px;
+    box-shadow: 0 0 15px #58a6ffaa;
+    z-index: 1000;
+  }
+  nav a {
+    color: #58a6ff;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+  }
+  nav a:hover {
+    background-color: #58a6ff33;
+  }
+  nav a.active {
+    background-color: #58a6ffaa;
+    color: #0f111a;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 2rem;
+      animation: typing 3s steps(18) forwards, blink 0.75s step-end infinite;
+      width: 0;
+    }
+    section h2 {
+      font-size: 1.5rem;
+    }
+  }
+  .profile-pic {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #58a6ff;
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
+  transition: transform 0.3s ease;
+}
+.profile-pic:hover {
+  transform: scale(1.05);
+}
+
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Mono&family=Source+Code+Pro&family=Poppins&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
-    <div class="left">
-        <h1 style="font-size: 1.5rem;">Hi, I am</h1>
-        <h1>Endy Mohlola</h1>
-        <p>Software Developer | Android | Web Developer</p>
-        <div class="social-icons">
-            <a href="https://github.com/ST10178848">🔗</a>
-            <a href="https://www.linkedin.com/in/endy-mohlola-424221251">💻</a>
-            <a href="https://www.facebook.com/share/1GRox7Gp9A/?mibextid=wwXIfr">📘</a>
-            <a href="https://www.tiktok.com/@enderson_iboy">🎵</a>
-        </div>
-    </div>
-    <div class="right">
-        <div class="buttons">
-            <button onclick="openPopup('about')">About Me</button>
-            <button onclick="openPopup('skills')">Skills</button>
-            <button onclick="openPopup('projects')">Projects</button>
-            <button class="contact-btn" onclick="openPopup('contact')">Contact Me</button>
-        </div>
-        <img src="p3.jpeg" alt="Endy Mohlola" class="profile-pic">
-    </div>
-    <div id="about" class="popup">
-        <h2>About Me</h2>
-        <p>I completed my Diploma in IT Software Development at Rosebank College, Braamfontein Campus, in 2024. One of my biggest personal projects was MathQuiz, which I developed using Android (Kotlin/Java). I also worked on a Birdwatching App and a Map-based application, where I integrated API keys to enhance functionality.
 
-            Beyond my projects, I am passionate about building innovative solutions, problem-solving, and software development.
-            
-            I completed my high school education at Spartan High School in Kempton Park in 2021.
-            
-            I am currently based in Limpopo and Gauteng, South Africa.</p>
-        <button onclick="closePopup('about')">Close</button>
+<div class="container">
+ <header>
+  <img src="p2.jpeg" alt="Endy Mohlola" class="profile-pic" />
+  <h1>Hi, I'm Endy Mohlola;</h1>
+  <h2>Software Developer | Android & Web | Innovator</h2>
+</header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm a passionate software developer and recent graduate from Rosebank College (2024) with a Diploma in IT Software Development. I’m currently an intern Software Developer at <strong>InvestHood IT</strong>, where I’m growing my skills building real-world solutions.
+    </p>
+    <p>
+      I have hands-on experience developing Android apps (Kotlin/Java), web apps (PHP, JavaScript), and API integrations such as Mapbox and Firebase. I love clean code, problem-solving, and creating innovative software.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <pre class="code-block">
+// Programming Languages
+<span class="keyword">languages</span> = [<span class="string">'C#'</span>, <span class="string">'Java'</span>, <span class="string">'Kotlin'</span>, <span class="string">'PHP'</span>];
+
+// Web Development
+<span class="keyword">web</span> = {
+  <span class="keyword">frontend</span>: [<span class="string">'HTML'</span>, <span class="string">'CSS'</span>, <span class="string">'JavaScript'</span>],
+  <span class="keyword">backend</span>: [<span class="string">'PHP'</span>]
+};
+
+// Databases
+<span class="keyword">databases</span> = [<span class="string">'MySQL'</span>, <span class="string">'Azure SQL'</span>, <span class="string">'Firebase'</span>];
+
+// Tools
+<span class="keyword">tools</span> = [<span class="string">'Git'</span>, <span class="string">'GitHub'</span>, <span class="string">'Android Studio'</span>, <span class="string">'Visual Studio'</span>];
+    </pre>
+    <div class="skills-logos" aria-label="Skill logos">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C# Logo" title="C#" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java Logo" title="Java" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin Logo" title="Kotlin" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP Logo" title="PHP" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5 Logo" title="HTML5" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3 Logo" title="CSS3" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript Logo" title="JavaScript" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL Logo" title="MySQL" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase Logo" title="Firebase" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Logo" title="GitHub" />
     </div>
-    <div id="skills" class="popup">
-        <h2>Skills</h2>
-        <ul>
-            <li>Programming Languages (C#, Java, Kotlin, PHP)</li>
-            <li>Web Development (HTML, CSS, JavaScript, PHP)</li>
-            <li>Database Management (MySQL/phpMyAdmin, Azure SQL)</li>
-            <li>API Integration (Mapbox, Firebase, eBird API)</li>
-            <li>Software Testing & Debugging</li>
-            <li>Version Control: GitHub, Git</li>
-        </ul>
-        <button onclick="closePopup('skills')">Close</button>
+  </section>
+
+  <section id="experience">
+  <h2>Experience</h2>
+  <pre class="code-block">
+// Software Intern at InvestHood IT (Jul 2025 – Jun 2026)
+<span class="comment">// Ongoing internship in software development and training.</span>
+function InternAtInvestHoodIT() {
+  const status = 'Currently undergoing hands-on training as a Software Developer Intern at InvestHood IT.';
+  return status;
+}
+
+// Stocktaking Assistant at Dail a StockTaker (2022 – 2024)
+<span class="comment">// Supported retail stocktaking operations with accuracy and teamwork</span>
+function StocktakingRole() {
+  const duties = [
+    'Count and verify stock levels on retail shelves',
+    'Work efficiently during non-peak hours and weekends',
+    'Assist in organizing and packing stock',
+    'Meet deadlines to ensure smooth client operations'
+  ];
+  return duties;
+}
+  </pre>
+</section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+   <ul class="projects-list">
+
+  <!-- MathQuiz App -->
+  <li style="display: flex; align-items: center; gap: 15px;">
+    <img src="c.jpg" alt="MathQuiz App" style="width: 60px; height: 60px; border-radius: 10px; object-fit: cover; box-shadow: 0 0 10px rgba(88,166,255,0.3);" />
+    <div>
+      <strong>MathQuiz App</strong> – 📱 A mobile quiz app developed using Kotlin/Java that helps learners practice math (addition, subtraction, multiplication, division). Features include real-time scoring, timer, and user feedback.
+      <a href="https://www.tiktok.com/@enderson_iboy" target="_blank">View Demo</a>
     </div>
-    <div id="projects" class="popup">
-        <h2>Projects</h2>
-        <h3>Birdwatching App</h3>
-        <p>Developed an interactive map using Mapbox to display birding hotspots.</p>
-        <h3>MathQuiz App</h3>
-        <p>Quiz-based app to enhance math skills. <a href="https://www.tiktok.com/@enderson_iboy">View on TikTok</a></p>
-        <h3>Map-Based Location App</h3>
-        <p>Used API key to track live location and display maps.</p>
-        <h3>Website Store for Clothes</h3>
-        <p>PHP-based web app with login and registration. Used phpMyAdmin for database management.</p>
-        <h3>Receipt Management Tool</h3>
-        <p>Project for managing receipts and transactionsits also on LinkedIn</p>
-        <h3>Other Projects</h3>
-        <p>More on <a href="https://www.linkedin.com/in/endy-mohlola-424221251">LinkedIn</a> and <a href="https://github.com/ST10178848">GitHub</a> and on  my Student Databse.</p>
-        <button onclick="closePopup('projects')">Close</button>
+  </li>
+
+  <!-- Birdwatching App -->
+  <li style="display: flex; align-items: center; gap: 15px; margin-top: 15px;">
+    <img src="b.jpg" alt="Birdwatching App" style="width: 60px; height: 60px; border-radius: 10px; object-fit: cover; box-shadow: 0 0 10px rgba(88,166,255,0.3);" />
+    <div>
+      <strong>Birdwatching Map App</strong> – 🐦 Android app using Mapbox SDK to help users explore birding hotspots in South Africa. Users can tap markers, view bird species data, and filter locations based on sightings.
     </div>
-    <div id="contact" class="popup">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:deandie17@gmail.com">deandie17@gmail.com</a></p>
-        <p>Phone: <a href="tel:+27714298172">071 429 8172</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/endy-mohlola-424221251" target="_blank">Visit my LinkedIn</a></p>
-        <button onclick="closePopup('contact')">Close</button>
+  </li>
+
+  <!-- Map-Based Location App -->
+  <li style="display: flex; align-items: center; gap: 15px; margin-top: 15px;">
+    <img src="m.jpg" alt="Location App" style="width: 60px; height: 60px; border-radius: 10px; object-fit: cover; box-shadow: 0 0 10px rgba(88,166,255,0.3);" />
+    <div>
+      <strong>Map-Based Location App</strong> – 📍 Real-time location tracking using Mapbox and GPS. The app shows your live location on a custom map and allows interaction with POIs and directions.
     </div>
-    <script>
-        function openPopup(id) {
-            document.getElementById(id).style.display = 'block';
-        }
-        function closePopup(id) {
-            document.getElementById(id).style.display = 'none';
-        }
-    </script>
+  </li>
+
+  <!-- Clothing Store Website -->
+  <li style="display: flex; align-items: center; gap: 15px; margin-top: 15px;">
+    <img src="s.jpg" alt="Clothing Store Website" style="width: 60px; height: 60px; border-radius: 10px; object-fit: cover; box-shadow: 0 0 10px rgba(88,166,255,0.3);" />
+    <div>
+      <strong>Clothing Store Website</strong> – 🛒 Built with PHP and MySQL using phpMyAdmin for database management. Users can register, log in, view items, and simulate orders. Built as part of my backend practice.
+     <a href="https://www.tiktok.com/@enderson_iboy" target="_blank">View Demo</a>
+    </div>
+  </li>
+
+  <!-- Receipt Management Tool -->
+  <li style="display: flex; align-items: center; gap: 15px; margin-top: 15px;">
+    <img src="r.jpg" alt="Receipt Management Tool" style="width: 60px; height: 60px; border-radius: 10px; object-fit: cover; box-shadow: 0 0 10px rgba(88,166,255,0.3);" />
+    <div>
+      <strong>Receipt Management Tool</strong> – 💼 A personal finance project to manage, organize, and track receipts. Built for practice and shared via LinkedIn. Uses database CRUD and export functionality.
+      <a href="https://www.linkedin.com/in/endy-mohlola-424221251" target="_blank">See on LinkedIn</a>
+    </div>
+  </li>
+
+</ul>
+  </section>
+
+  <section id="contact">
+  <h2>Contact Me</h2>
+  <p><i class="fas fa-envelope"></i> <a href="mailto:deandie17@gmail.com">deandie17@gmail.com</a></p>
+  <p><i class="fas fa-phone"></i> <a href="tel:+27714298172">+27 71 429 8172</a></p>
+  <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/endy-mohlola-424221251" target="_blank">linkedin.com/in/endy-mohlola</a></p>
+  <p><i class="fab fa-github"></i> <a href="https://github.com/ST10178848" target="_blank">github.com/ST10178848</a></p>
+  <p><i class="fas fa-map-marker-alt"></i> Gauteng, Germiston, South Africa</p>
+  <p><i class="fas fa-file-download"></i> <a href="G1CV.pdf" download="Endy_Mohlola_CV.pdf">Download My CV</a></p>
+</section>
+</div>
+
+<nav aria-label="Primary navigation">
+  <a href="#about" class="active">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#experience">Experience</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<script>
+  // Highlight nav links on scroll
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (pageYOffset >= sectionTop) current = section.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
