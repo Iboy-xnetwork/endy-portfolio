@@ -7,7 +7,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Plus+Jakarta+Sans:wght@300;500;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&family=Plus+Jakarta+Sans:wght@300;500;800&display=swap');
     
     body {
         background: #0d1117;
@@ -16,37 +16,21 @@
         scroll-behavior: smooth;
     }
 
-    .glass-nav {
-        background: rgba(13, 17, 23, 0.8);
-        backdrop-filter: blur(12px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    .section-border {
+        border-bottom: 1px solid #30363d;
+        padding-bottom: 60px;
+        margin-bottom: 60px;
     }
-
-    .code-block {
-        background: #161b22;
-        padding: 24px;
-        border-radius: 12px;
-        font-family: 'Fira Code', monospace;
-        font-size: 0.9rem;
-        border: 1px solid #30363d;
-        overflow-x: auto;
-    }
-
-    .keyword { color: #f85149; }
-    .string { color: #56d364; }
-    .comment { color: #6e7781; font-style: italic; }
-    .function { color: #d2a8ff; }
 
     .project-card {
         background: #161b22;
         border: 1px solid #30363d;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.3s ease;
     }
 
     .project-card:hover {
-        transform: translateY(-8px);
         border-color: #58a6ff;
-        box-shadow: 0 10px 30px rgba(88, 166, 255, 0.1);
+        transform: translateY(-5px);
     }
 
     .profile-pic {
@@ -54,195 +38,189 @@
         height: 160px;
         border-radius: 50%;
         object-fit: cover;
-        border: 4px solid #58a6ff;
+        border: 3px solid #58a6ff;
         box-shadow: 0 0 20px rgba(88, 166, 255, 0.2);
     }
-
-    .typewriter {
-        overflow: hidden;
-        border-right: .15em solid #58a6ff;
-        white-space: nowrap;
-        margin: 0 auto;
-        animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
-    }
-
-    @keyframes typing { from { width: 0 } to { width: 100% } }
-    @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #58a6ff; } }
 
     .nav-pill {
         position: fixed;
         bottom: 30px;
         left: 50%;
         transform: translateX(-50%);
-        background: rgba(22, 27, 34, 0.9);
-        border: 1px solid rgba(88, 166, 255, 0.3);
+        background: rgba(22, 27, 34, 0.95);
+        border: 1px solid rgba(88, 166, 255, 0.2);
         border-radius: 99px;
-        padding: 10px 20px;
+        padding: 8px;
         display: flex;
-        gap: 15px;
         z-index: 1000;
-        box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
     .nav-pill a {
-        font-size: 0.75rem;
+        font-size: 11px;
         font-weight: 800;
         text-transform: uppercase;
-        letter-spacing: 1px;
-        padding: 8px 16px;
+        padding: 10px 18px;
         border-radius: 99px;
         transition: 0.3s;
+        color: #8b949e;
     }
 
     .nav-pill a:hover, .nav-pill a.active {
         background: #58a6ff;
         color: #0d1117;
     }
+
+    .exp-dot {
+        width: 12px;
+        height: 12px;
+        background: #58a6ff;
+        border-radius: 50%;
+        position: absolute;
+        left: -6px;
+        top: 8px;
+    }
 </style>
 </head>
-<body class="pb-24">
+<body class="pb-32">
 
-    <header class="pt-32 pb-20 px-6 text-center">
+    <header class="pt-24 pb-16 px-6 text-center">
         <img src="p2.jpeg" alt="Endy Mohlola" class="profile-pic mx-auto mb-8">
-        <h1 class="text-4xl md:text-6xl font-black tracking-tighter mb-4">Hi, I'm <span class="text-blue-500">Endy Mohlola;</span></h1>
-        <div class="flex justify-center">
-            <h2 class="typewriter text-gray-400 font-mono text-sm md:text-lg">Lead Systems Architect @ XNETWORK Group</h2>
-        </div>
-        <p class="text-gray-500 mt-6 max-w-xl mx-auto font-medium">Full-Stack Developer | Web & Mobile Apps | Kotlin, Java, PHP & React Expert</p>
+        <h1 class="text-4xl md:text-5xl font-black tracking-tighter mb-2">Endy Mohlola</h1>
+        <h2 class="text-blue-500 font-bold tracking-widest uppercase text-sm mb-6">Lead Systems Architect @ XNETWORK Group</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            Full-Stack Developer & Software Engineering Graduate. Specialized in Java, Kotlin, and Web Architectures. Currently driving technical innovation at XNETWORK and InvestHood IT.
+        </p>
     </header>
 
-    <main class="max-w-4xl mx-auto px-6 space-y-24">
+    <main class="max-w-4xl mx-auto px-6">
         
-        <section id="about">
-            <h2 class="text-2xl font-black uppercase tracking-widest text-blue-500 mb-8 flex items-center gap-4">
-                <span class="h-[1px] w-12 bg-blue-500"></span> About System
-            </h2>
-            <div class="space-y-6 text-lg leading-relaxed text-gray-300">
-                <p>I am a dedicated software developer and Lead Developer at <strong>XNETWORK Group</strong>. As a 2024 IT Software Development graduate from Rosebank College, I combine academic excellence with high-level industry application.</p>
-                <p>Currently serving as a Software Developer Intern at <strong>InvestHood IT</strong>, I specialize in building Android ecosystems (Kotlin/Java) and advanced web architectures (PHP, JavaScript, React). I am driven by clean code and the architecture of real-world solutions.</p>
-            </div>
+        <section id="about" class="section-border">
+            <h2 class="text-xl font-black uppercase tracking-widest text-blue-500 mb-6 italic">01. About Me</h2>
+            <p class="text-gray-400 mb-4 text-lg">
+                I am a motivated Software Developer and Rosebank College graduate (Diploma in IT, 2024). My focus is on creating real-world solutions through clean code and robust database management.
+            </p>
+            <p class="text-gray-400 text-lg">
+                Currently, I am expanding my enterprise development skills at <strong>InvestHood IT</strong> while leading the technical direction of the <strong>XNETWORK Group</strong>.
+            </p>
         </section>
 
-        <section id="skills">
-            <h2 class="text-2xl font-black uppercase tracking-widest text-blue-500 mb-8 flex items-center gap-4">
-                <span class="h-[1px] w-12 bg-blue-500"></span> Core Stack
-            </h2>
-            <div class="code-block mb-10">
-<span class="comment">// Technical Proficiencies</span>
-<span class="keyword">languages</span> = [<span class="string">'C#'</span>, <span class="string">'Java'</span>, <span class="string">'Kotlin'</span>, <span class="string">'PHP'</span>, <span class="string">'Python'</span>];
-<span class="keyword">frontend</span> = [<span class="string">'React'</span>, <span class="string">'Tailwind'</span>, <span class="string">'JS/jQuery'</span>, <span class="string">'HTML/CSS'</span>];
-<span class="keyword">backend</span> = [<span class="string">'Node.js'</span>, <span class="string">'PHP'</span>, <span class="string">'Firebase'</span>];
-<span class="keyword">database</span> = [<span class="string">'MySQL'</span>, <span class="string">'Azure SQL'</span>, <span class="string">'phpMyAdmin'</span>];
-<span class="keyword">tools</span> = [<span class="string">'Android Studio'</span>, <span class="string">'GitHub'</span>, <span class="string">'Postman'</span>, <span class="string">'Figma'</span>];
-            </div>
-            <div class="flex flex-wrap justify-center gap-6 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="w-10" title="Java">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" class="w-10" title="Kotlin">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="w-10" title="PHP">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-10" title="React">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="w-10" title="MySQL">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" class="w-10" title="Firebase">
-            </div>
-        </section>
-
-        <section id="experience">
-            <h2 class="text-2xl font-black uppercase tracking-widest text-blue-500 mb-8 flex items-center gap-4">
-                <span class="h-[1px] w-12 bg-blue-500"></span> Experience
-            </h2>
-            <div class="space-y-8">
-                <div class="code-block">
-<span class="function">function Lead_XNETWORK_Group()</span> {
-  <span class="keyword">const</span> status = <span class="string">'Technical Founder & Lead Systems Architect'</span>;
-  <span class="keyword">const</span> delivery = [<span class="string">'JitaShop Marketplace'</span>, <span class="string">'XNET CV Engine'</span>];
-  <span class="purple-400">return</span> { status, delivery };
-}
-
-<span class="function">function Intern_InvestHood_IT()</span> {
-  <span class="comment">// July 2025 – June 2026 (Ongoing)</span>
-  <span class="keyword">return</span> <span class="string">'Enterprise Software Development & Professional Training'</span>;
-}
+        <section id="skills" class="section-border">
+            <h2 class="text-xl font-black uppercase tracking-widest text-blue-500 mb-8 italic">02. Technical Arsenal</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xs font-bold text-gray-500 uppercase tracking-tighter mb-4">Core Programming & Web</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><span class="text-blue-400">Languages:</span> Java, C#, MQL5, Python (Basic)</li>
+                        <li><span class="text-blue-400">Web Development:</span> HTML, CSS, React, JavaScript, jQuery, PHP, WordPress</li>
+                        <li><span class="text-blue-400">Mobile Apps:</span> Kotlin & Java (Android Development), Mapbox SDK Integration</li>
+                    </ul>
                 </div>
-                <div class="bg-white/5 p-8 rounded-2xl border border-white/5">
-                    <h3 class="text-xl font-bold">Stocktaking Assistant @ Dail a StockTaker</h3>
-                    <p class="text-sm text-gray-500 mb-4">2022 – 2024</p>
-                    <ul class="text-sm text-gray-400 space-y-2">
-                        <li>• Accurate physical stock verification for retail operations.</li>
-                        <li>• Execution of logistics and organizational layout standards.</li>
-                        <li>• Worked under tight deadlines to ensure store operation continuity.</li>
+                <div>
+                    <h3 class="text-xs font-bold text-gray-500 uppercase tracking-tighter mb-4">Databases & Tools</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><span class="text-blue-400">Database Management:</span> SQL / MySQL (Oracle), phpMyAdmin, Firebase, Azure</li>
+                        <li><span class="text-blue-400">Software & Tools:</span> Android Studio, Visual Studio, GitHub, Azure DevOps, Postman, Figma, Apache JMeter, SharePoint</li>
+                        <li><span class="text-blue-400">Related Skills:</span> System Architecture, API Integration, Unit Testing, UI/UX Design</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section id="projects">
-            <h2 class="text-2xl font-black uppercase tracking-widest text-blue-500 mb-8 flex items-center gap-4">
-                <span class="h-[1px] w-12 bg-blue-500"></span> Flagship Projects
-            </h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                
-                <div class="project-card p-6 rounded-2xl">
-                    <img src="r.jpg" class="w-full h-40 object-cover rounded-xl mb-4">
-                    <h3 class="font-black text-lg mb-1 uppercase tracking-tighter">XNET CV Engine</h3>
-                    <p class="text-xs text-gray-400 mb-4">AI-simulated career engine for ATS optimization and interview preparation.</p>
-                    <a href="https://iboy-xnetwork.github.io/xnet-cv-engine/" class="text-[10px] font-bold text-blue-400 uppercase tracking-widest">Launch System</a>
+        <section id="experience" class="section-border">
+            <h2 class="text-xl font-black uppercase tracking-widest text-blue-500 mb-10 italic">03. Professional Experience</h2>
+            
+            <div class="space-y-12 border-l-2 border-gray-800 ml-2 pl-8 relative">
+                <div class="relative">
+                    <div class="exp-dot"></div>
+                    <h3 class="text-xl font-bold">Lead Developer & Technical Founder</h3>
+                    <p class="text-blue-400 font-bold text-xs uppercase mb-4">XNETWORK Group | 2026 — Present</p>
+                    <ul class="text-gray-400 text-sm space-y-2">
+                        <li>• Architecture and deployment of the JitaShop community marketplace.</li>
+                        <li>• Engineering the XNET CV Engine AI simulation platform.</li>
+                        <li>• Managing full-stack production environments and system scaling.</li>
+                    </ul>
                 </div>
 
-                <div class="project-card p-6 rounded-2xl">
-                    <img src="s.jpg" class="w-full h-40 object-cover rounded-xl mb-4">
-                    <h3 class="font-black text-lg mb-1 uppercase tracking-tighter">JitaShop Marketplace</h3>
-                    <p class="text-xs text-gray-400 mb-4">Community-driven e-commerce store with vendor tracking and secure login.</p>
-                    <a href="#" class="text-[10px] font-bold text-blue-400 uppercase tracking-widest">View Demo</a>
+                <div class="relative">
+                    <div class="exp-dot"></div>
+                    <h3 class="text-xl font-bold">Software Developer Intern</h3>
+                    <p class="text-blue-400 font-bold text-xs uppercase mb-4">InvestHood IT | July 2025 — June 2026</p>
+                    <ul class="text-gray-400 text-sm space-y-2">
+                        <li>• Undergoing intensive hands-on training in enterprise software development.</li>
+                        <li>• Collaborating on real-world IT solutions and systems integration.</li>
+                        <li>• Mastering Agile methodologies and software life-cycle management.</li>
+                    </ul>
                 </div>
 
-                <div class="project-card p-6 rounded-2xl">
-                    <img src="c.jpg" class="w-full h-40 object-cover rounded-xl mb-4">
-                    <h3 class="font-black text-lg mb-1 uppercase tracking-tighter">MathQuiz App</h3>
-                    <p class="text-xs text-gray-400 mb-4">Mobile learning app (Kotlin/Java) featuring real-time scoring and timers.</p>
-                    <a href="https://www.tiktok.com/@enderson_iboy" class="text-[10px] font-bold text-blue-400 uppercase tracking-widest">Watch TikTok Demo</a>
-                </div>
-
-                <div class="project-card p-6 rounded-2xl">
-                    <img src="b.jpg" class="w-full h-40 object-cover rounded-xl mb-4">
-                    <h3 class="font-black text-lg mb-1 uppercase tracking-tighter">Birdwatching Map App</h3>
-                    <p class="text-xs text-gray-400 mb-4">Android application using Mapbox SDK to track birding hotspots in SA.</p>
-                    <span class="text-[10px] font-bold text-gray-600 uppercase">Kotlin • Mapbox SDK</span>
-                </div>
-
-                <div class="project-card p-6 rounded-2xl">
-                    <img src="m.jpg" class="w-full h-40 object-cover rounded-xl mb-4">
-                    <h3 class="font-black text-lg mb-1 uppercase tracking-tighter">Location Tracker</h3>
-                    <p class="text-xs text-gray-400 mb-4">Real-time GPS tracking app with POI interaction and custom map layers.</p>
-                    <span class="text-[10px] font-bold text-gray-600 uppercase">Android • GPS API</span>
-                </div>
-
-                <div class="project-card p-6 rounded-2xl">
-                    <img src="r.jpg" class="w-full h-40 object-cover rounded-xl mb-4">
-                    <h3 class="font-black text-lg mb-1 uppercase tracking-tighter">Receipt Manager</h3>
-                    <p class="text-xs text-gray-400 mb-4">Finance tool for organizing and tracking digital receipts with CRUD logic.</p>
-                    <a href="https://www.linkedin.com/in/endy-mohlola-424221251" class="text-[10px] font-bold text-blue-400 uppercase tracking-widest">View LinkedIn Post</a>
+                <div class="relative">
+                    <div class="exp-dot"></div>
+                    <h3 class="text-xl font-bold">Stocktaking Assistant</h3>
+                    <p class="text-blue-400 font-bold text-xs uppercase mb-4">Dial a StockTaker | 2022 — 2024</p>
+                    <ul class="text-gray-400 text-sm space-y-2">
+                        <li>• Counted and verified stock levels with high accuracy for retail clients.</li>
+                        <li>• Worked efficiently under tight deadlines and non-peak hours.</li>
+                        <li>• Gained experience in teamwork and large-scale inventory logistics.</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="pb-40">
-            <h2 class="text-2xl font-black uppercase tracking-widest text-blue-500 mb-8 flex items-center gap-4">
-                <span class="h-[1px] w-12 bg-blue-500"></span> Connection
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
-                <a href="mailto:deandie17@gmail.com" class="p-6 bg-white/5 rounded-2xl hover:bg-blue-500/10 transition"><i class="fas fa-envelope mr-3 text-blue-500"></i> deandie17@gmail.com</a>
-                <a href="tel:+27714298172" class="p-6 bg-white/5 rounded-2xl hover:bg-blue-500/10 transition"><i class="fas fa-phone mr-3 text-blue-500"></i> +27 71 429 8172</a>
-                <a href="https://github.com/Iboy-xnetwork" class="p-6 bg-white/5 rounded-2xl hover:bg-blue-500/10 transition"><i class="fab fa-github mr-3 text-blue-500"></i> github.com/iboyx</a>
-                <a href="G1CV.pdf" download class="p-6 bg-blue-600 rounded-2xl text-center font-black uppercase tracking-widest hover:bg-white hover:text-blue-600 transition">Download CV</a>
+        <section id="projects" class="section-border">
+            <h2 class="text-xl font-black uppercase tracking-widest text-blue-500 mb-10 italic">04. Flagship Projects</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="project-card p-4 rounded-xl">
+                    <img src="c.jpg" class="w-full h-44 object-cover rounded-lg mb-4" alt="MathQuiz">
+                    <h4 class="font-bold mb-1">MathQuiz App</h4>
+                    <p class="text-xs text-gray-500 mb-4 italic">Kotlin/Java Mobile Application</p>
+                    <a href="https://www.tiktok.com/@enderson_iboy" target="_blank" class="text-xs font-bold text-blue-400 uppercase">View Demo</a>
+                </div>
+                <div class="project-card p-4 rounded-xl">
+                    <img src="b.jpg" class="w-full h-44 object-cover rounded-lg mb-4" alt="Birdwatching">
+                    <h4 class="font-bold mb-1">Birdwatching Map App</h4>
+                    <p class="text-xs text-gray-500 mb-4 italic">Android / Mapbox SDK</p>
+                    <span class="text-xs font-bold text-gray-600 uppercase">Interactive Markers</span>
+                </div>
+                <div class="project-card p-4 rounded-xl">
+                    <img src="m.jpg" class="w-full h-44 object-cover rounded-lg mb-4" alt="Location">
+                    <h4 class="font-bold mb-1">Real-time Location Tracker</h4>
+                    <p class="text-xs text-gray-500 mb-4 italic">GPS API Integration</p>
+                    <span class="text-xs font-bold text-gray-600 uppercase">Live Tracking</span>
+                </div>
+                <div class="project-card p-4 rounded-xl">
+                    <img src="s.jpg" class="w-full h-44 object-cover rounded-lg mb-4" alt="Clothing Store">
+                    <h4 class="font-bold mb-1">Clothing Store Web-App</h4>
+                    <p class="text-xs text-gray-500 mb-4 italic">PHP / MySQL / phpMyAdmin</p>
+                    <a href="https://www.tiktok.com/@enderson_iboy" target="_blank" class="text-xs font-bold text-blue-400 uppercase">Demo</a>
+                </div>
+                <div class="project-card p-4 rounded-xl">
+                    <img src="r.jpg" class="w-full h-44 object-cover rounded-lg mb-4" alt="Receipt">
+                    <h4 class="font-bold mb-1">Receipt Management Tool</h4>
+                    <p class="text-xs text-gray-500 mb-4 italic">Database CRUD System</p>
+                    <a href="https://www.linkedin.com/in/endy-mohlola-424221251" target="_blank" class="text-xs font-bold text-blue-400 uppercase">LinkedIn</a>
+                </div>
             </div>
+        </section>
+
+        <section id="contact" class="text-center pt-10">
+            <h2 class="text-3xl font-black mb-10 text-white">Connection</h2>
+            <div class="flex flex-col md:flex-row justify-center gap-6 mb-12">
+                <a href="mailto:deandie17@gmail.com" class="text-sm hover:text-blue-400 transition italic font-medium">deandie17@gmail.com</a>
+                <a href="tel:+27714298172" class="text-sm hover:text-blue-400 transition font-medium">+27 71 429 8172</a>
+                <a href="https://www.linkedin.com/in/endy-mohlola-424221251" target="_blank" class="text-sm hover:text-blue-400 transition font-bold uppercase tracking-tighter">LinkedIn</a>
+                <a href="https://www.upwork.com/freelancers/~016067ebd90dcde040" target="_blank" class="text-sm hover:text-blue-400 transition font-bold uppercase tracking-tighter">Upwork</a>
+            </div>
+            <a href="G1CV.pdf" download class="px-10 py-4 bg-blue-600 text-white font-black uppercase text-xs tracking-widest rounded-full hover:bg-white hover:text-black transition shadow-xl">Download Senior CV</a>
         </section>
 
     </main>
 
-    <nav class="nav-pill">
+    <nav class="nav-pill shadow-2xl">
         <a href="#about" class="active">About</a>
         <a href="#skills">Skills</a>
-        <a href="#experience">Exp</a>
+        <a href="#experience">History</a>
         <a href="#projects">Work</a>
+        <a href="#contact">Hire</a>
     </nav>
 
     <script>
@@ -252,7 +230,7 @@
         window.addEventListener('scroll', () => {
             let current = '';
             sections.forEach(section => {
-                const sectionTop = section.offsetTop - 150;
+                const sectionTop = section.offsetTop - 200;
                 if (pageYOffset >= sectionTop) current = section.getAttribute('id');
             });
             links.forEach(link => {
