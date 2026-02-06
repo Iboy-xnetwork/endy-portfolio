@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Endy Mohlola | Lead Software Engineer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Endy Mohlola | Software Engineer & Developer</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
@@ -18,8 +18,8 @@
 
     .section-border {
         border-bottom: 1px solid #30363d;
-        padding-bottom: 60px;
-        margin-bottom: 60px;
+        padding-bottom: 40px;
+        margin-bottom: 40px;
     }
 
     .project-card {
@@ -34,8 +34,8 @@
     }
 
     .profile-pic {
-        width: 160px;
-        height: 160px;
+        width: 140px;
+        height: 140px;
         border-radius: 50%;
         object-fit: cover;
         border: 3px solid #58a6ff;
@@ -44,26 +44,29 @@
 
     .nav-pill {
         position: fixed;
-        bottom: 30px;
+        bottom: 16px;
         left: 50%;
         transform: translateX(-50%);
         background: rgba(22, 27, 34, 0.95);
         border: 1px solid rgba(88, 166, 255, 0.2);
-        border-radius: 99px;
-        padding: 8px;
+        border-radius: 9999px;
+        padding: 6px;
         display: flex;
         z-index: 1000;
         box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        max-width: 95vw;
+        overflow-x: auto;
     }
 
     .nav-pill a {
-        font-size: 11px;
+        font-size: 10px;
         font-weight: 800;
         text-transform: uppercase;
-        padding: 10px 18px;
-        border-radius: 99px;
+        padding: 8px 14px;
+        border-radius: 9999px;
         transition: 0.3s;
         color: #8b949e;
+        white-space: nowrap;
     }
 
     .nav-pill a:hover, .nav-pill a.active {
@@ -78,189 +81,184 @@
         border-radius: 50%;
         position: absolute;
         left: -6px;
-        top: 8px;
+        top: 10px;
+    }
+
+    @media (min-width: 640px) {
+        .profile-pic { width: 160px; height: 160px; }
+        .section-border { padding-bottom: 60px; margin-bottom: 60px; }
+        .nav-pill a { font-size: 11px; padding: 10px 18px; }
     }
 </style>
 </head>
-<body class="pb-32">
+<body class="pb-24 sm:pb-32">
 
-    <header class="pt-24 pb-16 px-6 text-center">
-        <img src="endy.jpeg" alt="Endy Mohlola" class="profile-pic mx-auto mb-8">
-        <h1 class="text-4xl md:text-5xl font-black tracking-tighter mb-2">Endy Mohlola</h1>
-        <h2 class="text-blue-500 font-bold tracking-widest uppercase text-sm mb-6">Lead Systems Architect @ XNETWORK Group</h2>
-        <p class="text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Full-Stack Developer & Software Engineering Graduate. Specialized in Java, Kotlin, and Web Architectures. Currently driving technical innovation at XNETWORK and InvestHood IT.
+    <header class="pt-20 sm:pt-24 pb-12 sm:pb-16 px-4 sm:px-6 text-center">
+        <img src="endy.jpeg" alt="Endy Mohlola" class="profile-pic mx-auto mb-6 sm:mb-8">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter mb-2">Endy Mohlola</h1>
+        <h2 class="text-blue-500 font-bold tracking-widest uppercase text-xs sm:text-sm mb-6">Full-Stack & Mobile Developer</h2>
+        <p class="text-gray-400 max-w-xl sm:max-w-2xl mx-auto leading-relaxed text-sm sm:text-base">
+            Software Engineering Graduate. Specialized in Java, Kotlin, Android, and Web Architectures. Building real-world solutions and side projects.
         </p>
     </header>
 
-    <main class="max-w-4xl mx-auto px-6">
-        
+    <main class="max-w-4xl mx-auto px-4 sm:px-6">
+
         <section id="about" class="section-border">
-            <h2 class="text-xl font-black uppercase tracking-widest text-blue-500 mb-6 italic">01. About Me</h2>
-            <p class="text-gray-400 mb-4 text-lg">
-                I am a motivated Software Developer and Rosebank College graduate (Diploma in IT, 2024). My focus is on creating real-world solutions through clean code and robust database management.
+            <h2 class="text-lg sm:text-xl font-black uppercase tracking-widest text-blue-500 mb-6 italic">01. About Me</h2>
+            <p class="text-gray-400 mb-4 text-base sm:text-lg">
+                Motivated Software Developer and Rosebank College graduate (Diploma in IT, 2024). Focused on clean code, robust systems, and real-world problem solving.
             </p>
-            <p class="text-gray-400 text-lg">
-                Currently, I am expanding my enterprise development skills at <strong>InvestHood IT</strong> while leading the technical direction of the <strong>XNETWORK Group</strong>.
+            <p class="text-gray-400 text-base sm:text-lg">
+                Currently expanding enterprise skills at <strong>InvestHood IT</strong> while working on personal and side projects.
             </p>
         </section>
 
         <section id="skills" class="section-border">
-            <h2 class="text-xl font-black uppercase tracking-widest text-blue-500 mb-8 italic">02. Technical Arsenal</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <h2 class="text-lg sm:text-xl font-black uppercase tracking-widest text-blue-500 mb-6 sm:mb-8 italic">02. Technical Arsenal</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                 <div>
                     <h3 class="text-xs font-bold text-gray-500 uppercase tracking-tighter mb-4">Core Programming & Web</h3>
                     <ul class="space-y-2 text-sm">
                         <li><span class="text-blue-400">Languages:</span> Java, C#, MQL5, Python (Basic)</li>
                         <li><span class="text-blue-400">Web Development:</span> HTML, CSS, React, JavaScript, jQuery, PHP, WordPress</li>
-                        <li><span class="text-blue-400">Mobile Apps:</span> Kotlin & Java (Android Development), Mapbox SDK Integration</li>
+                        <li><span class="text-blue-400">Mobile Apps:</span> Kotlin & Java (Android), Mapbox SDK</li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-xs font-bold text-gray-500 uppercase tracking-tighter mb-4">Databases & Tools</h3>
                     <ul class="space-y-2 text-sm">
-                        <li><span class="text-blue-400">Database Management:</span> SQL / MySQL (Oracle), phpMyAdmin, Firebase, Azure</li>
-                        <li><span class="text-blue-400">Software & Tools:</span> Android Studio, Visual Studio, GitHub, Azure DevOps, Postman, Figma, Apache JMeter, SharePoint</li>
-                        <li><span class="text-blue-400">Related Skills:</span> System Architecture, API Integration, Unit Testing, UI/UX Design</li>
+                        <li><span class="text-blue-400">Databases:</span> SQL / MySQL (Oracle), phpMyAdmin, Firebase, Azure</li>
+                        <li><span class="text-blue-400">Tools:</span> Android Studio, Visual Studio, GitHub, Azure DevOps, Postman, Figma, JMeter, SharePoint</li>
+                        <li><span class="text-blue-400">Other:</span> System Architecture, API Integration, Unit Testing, UI/UX</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <section id="experience" class="section-border">
-            <h2 class="text-xl font-black uppercase tracking-widest text-blue-500 mb-10 italic">03. Professional Experience</h2>
+            <h2 class="text-lg sm:text-xl font-black uppercase tracking-widest text-blue-500 mb-8 sm:mb-10 italic">03. Professional Experience</h2>
             
-            <div class="space-y-12 border-l-2 border-gray-800 ml-2 pl-8 relative">
+            <div class="space-y-10 sm:space-y-12 border-l-2 border-gray-800 ml-2 pl-6 sm:pl-8 relative">
                 <div class="relative">
                     <div class="exp-dot"></div>
-                    <h3 class="text-xl font-bold">Lead Developer & Technical Founder</h3>
-                    <p class="text-blue-400 font-bold text-xs uppercase mb-4">XNETWORK Group | 2026 — Present</p>
+                    <h3 class="text-lg sm:text-xl font-bold">Software Developer Intern</h3>
+                    <p class="text-blue-400 font-bold text-xs uppercase mb-3 sm:mb-4">InvestHood IT | July 2025 — June 2026</p>
                     <ul class="text-gray-400 text-sm space-y-2">
-                        <li>• Architecture and deployment of the JitaShop community marketplace.</li>
-                        <li>• Engineering the XNET CV Engine AI simulation platform.</li>
-                        <li>• Managing full-stack production environments and system scaling.</li>
+                        <li>• Hands-on enterprise software development training</li>
+                        <li>• Collaborating on real IT solutions and integrations</li>
+                        <li>• Learning Agile and full software lifecycle</li>
                     </ul>
                 </div>
 
                 <div class="relative">
                     <div class="exp-dot"></div>
-                    <h3 class="text-xl font-bold">Software Developer Intern</h3>
-                    <p class="text-blue-400 font-bold text-xs uppercase mb-4">InvestHood IT | July 2025 — June 2026</p>
+                    <h3 class="text-lg sm:text-xl font-bold">Stocktaking Assistant</h3>
+                    <p class="text-blue-400 font-bold text-xs uppercase mb-3 sm:mb-4">Dial a StockTaker | 2022 — 2024</p>
                     <ul class="text-gray-400 text-sm space-y-2">
-                        <li>• Undergoing intensive hands-on training in enterprise software development.</li>
-                        <li>• Collaborating on real-world IT solutions and systems integration.</li>
-                        <li>• Mastering Agile methodologies and software life-cycle management.</li>
-                    </ul>
-                </div>
-
-                <div class="relative">
-                    <div class="exp-dot"></div>
-                    <h3 class="text-xl font-bold">Stocktaking Assistant</h3>
-                    <p class="text-blue-400 font-bold text-xs uppercase mb-4">Dial a StockTaker | 2022 — 2024</p>
-                    <ul class="text-gray-400 text-sm space-y-2">
-                        <li>• Counted and verified stock levels with high accuracy for retail clients.</li>
-                        <li>• Worked efficiently under tight deadlines and non-peak hours.</li>
-                        <li>• Gained experience in teamwork and large-scale inventory logistics.</li>
+                        <li>• Accurate stock verification for retail clients</li>
+                        <li>• Worked under tight deadlines and team settings</li>
+                        <li>• Gained logistics and teamwork experience</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-<section id="projects" class="section-border">
-            <h2 class="text-xl font-black uppercase tracking-widest text-blue-500 mb-10 italic">04. Flagship Projects</h2>
-            <div class="grid md:grid-cols-2 gap-8">
+        <section id="projects" class="section-border">
+            <h2 class="text-lg sm:text-xl font-black uppercase tracking-widest text-blue-500 mb-8 sm:mb-10 italic">04. Flagship Projects & Side Hustles</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 
-                <div class="project-card p-5 rounded-2xl border-2 border-blue-500/20">
-                    <div class="bg-blue-500/10 text-blue-400 text-[10px] font-bold px-2 py-1 rounded mb-4 inline-block tracking-widest uppercase">Enterprise Solution</div>
-                    <img src="s.jpg" class="w-full h-48 object-cover rounded-xl mb-4" alt="JitaShop">
-                    <h4 class="font-black text-lg mb-1 tracking-tighter uppercase">JitaShop Marketplace</h4>
-                    <p class="text-xs text-gray-400 mb-4">A high-scale community e-commerce platform with secure vendor authentication and real-time inventory management logic.</p>
-                    <a href="https://jitashopx.vercel.app/" target="_blank" class="text-[10px] font-bold text-blue-400 uppercase border-b border-blue-400">Live Architecture</a>
+                <div class="project-card p-4 sm:p-5 rounded-2xl border-2 border-blue-500/20">
+                    <div class="bg-blue-500/10 text-blue-400 text-[10px] font-bold px-2 py-1 rounded mb-3 sm:mb-4 inline-block uppercase">Community Marketplace</div>
+                    <img src="s.jpg" class="w-full h-40 sm:h-48 object-cover rounded-xl mb-3 sm:mb-4" alt="JitaShop">
+                    <h4 class="font-black text-base sm:text-lg mb-1 uppercase">JitaShop Marketplace</h4>
+                    <p class="text-xs text-gray-400 mb-3 sm:mb-4">High-scale e-commerce platform with vendor auth and real-time inventory (Side project @ XNETWORK).</p>
+                    <a href="https://jitashopx.vercel.app/" target="_blank" class="text-[10px] font-bold text-blue-400 uppercase border-b border-blue-400">Live Demo</a>
                 </div>
 
-                <div class="project-card p-5 rounded-2xl border-2 border-blue-500/20">
-                    <div class="bg-blue-500/10 text-blue-400 text-[10px] font-bold px-2 py-1 rounded mb-4 inline-block tracking-widest uppercase">AI & Automation</div>
-                    <img src="r.jpg" class="w-full h-48 object-cover rounded-xl mb-4" alt="CV Engine">
-                    <h4 class="font-black text-lg mb-1 tracking-tighter uppercase">CV Engine</h4>
-                    <p class="text-xs text-gray-400 mb-4">Systematic career tool analyzing ATS compatibility and simulating professional recruitment logic through intelligent data mapping.</p>
+                <div class="project-card p-4 sm:p-5 rounded-2xl border-2 border-blue-500/20">
+                    <div class="bg-blue-500/10 text-blue-400 text-[10px] font-bold px-2 py-1 rounded mb-3 sm:mb-4 inline-block uppercase">AI Career Tool</div>
+                    <img src="r.jpg" class="w-full h-40 sm:h-48 object-cover rounded-xl mb-3 sm:mb-4" alt="CV Engine">
+                    <h4 class="font-black text-base sm:text-lg mb-1 uppercase">CV Engine</h4>
+                    <p class="text-xs text-gray-400 mb-3 sm:mb-4">ATS-compatible CV analyzer with intelligent recruitment simulation (Side project @ XNETWORK).</p>
                     <a href="https://iboy-xnetwork.github.io/xnet-cv-engine/" target="_blank" class="text-[10px] font-bold text-blue-400 uppercase border-b border-blue-400">Launch Engine</a>
                 </div>
 
-                <div class="project-card p-5 rounded-2xl border-2 border-blue-500/20">
-                    <div class="bg-blue-500/10 text-blue-400 text-[10px] font-bold px-2 py-1 rounded mb-4 inline-block tracking-widest uppercase">Corporate Ecosystem</div>
-                    <img src="s.jpg" class="w-full h-48 object-cover rounded-xl mb-4" alt="XNetwork">
-                    <h4 class="font-black text-lg mb-1 tracking-tighter uppercase">XNETWORK Official</h4>
-                    <p class="text-xs text-gray-400 mb-4">The central digital hub for XNETWORK Group operations, featuring service architecture and enterprise-level branding.</p>
-                    <a href="https://x-network.vercel.app/" target="_blank" class="text-[10px] font-bold text-blue-400 uppercase border-b border-blue-400">View Network</a>
+                <div class="project-card p-4 sm:p-5 rounded-2xl border-2 border-blue-500/20">
+                    <div class="bg-blue-500/10 text-blue-400 text-[10px] font-bold px-2 py-1 rounded mb-3 sm:mb-4 inline-block uppercase">Group Hub</div>
+                    <img src="s.jpg" class="w-full h-40 sm:h-48 object-cover rounded-xl mb-3 sm:mb-4" alt="XNetwork">
+                    <h4 class="font-black text-base sm:text-lg mb-1 uppercase">XNETWORK Official</h4>
+                    <p class="text-xs text-gray-400 mb-3 sm:mb-4">Central digital hub for group operations and branding (Side project @ XNETWORK).</p>
+                    <a href="https://x-network.vercel.app/" target="_blank" class="text-[10px] font-bold text-blue-400 uppercase border-b border-blue-400">View Site</a>
                 </div>
 
-                <div class="project-card p-5 rounded-2xl border-2 border-blue-500/20">
-                    <div class="bg-blue-500/10 text-blue-400 text-[10px] font-bold px-2 py-1 rounded mb-4 inline-block tracking-widest uppercase">Technical Branding</div>
-                    <img src="endy.jpeg" class="w-full h-48 object-cover rounded-xl mb-4" alt="Portfolio">
-                    <h4 class="font-black text-lg mb-1 tracking-tighter uppercase">Lead Portfolio v2.0</h4>
-                    <p class="text-xs text-gray-400 mb-4">My professional systems architect portfolio (this site). Built with custom Tailwind logic and high-end responsive UI/UX.</p>
-                    <a href="#" class="text-[10px] font-bold text-blue-400 uppercase border-b border-blue-400">Current System</a>
+                <div class="project-card p-4 sm:p-5 rounded-2xl border-2 border-blue-500/20">
+                    <div class="bg-blue-500/10 text-blue-400 text-[10px] font-bold px-2 py-1 rounded mb-3 sm:mb-4 inline-block uppercase">Personal Site</div>
+                    <img src="endy.jpeg" class="w-full h-40 sm:h-48 object-cover rounded-xl mb-3 sm:mb-4" alt="Portfolio">
+                    <h4 class="font-black text-base sm:text-lg mb-1 uppercase">Portfolio v2.0</h4>
+                    <p class="text-xs text-gray-400 mb-3 sm:mb-4">This responsive portfolio site built with Tailwind.</p>
+                    <span class="text-[10px] font-bold text-blue-400 uppercase">Current Version</span>
                 </div>
 
-                <div class="project-card p-5 rounded-2xl">
-                    <img src="c.jpg" class="w-full h-44 object-cover rounded-xl mb-4" alt="MathQuiz">
-                    <h4 class="font-bold mb-1">MathQuiz App</h4>
-                    <p class="text-xs text-gray-500 mb-4 italic">Kotlin/Java Mobile Application</p>
+                <div class="project-card p-4 sm:p-5 rounded-2xl">
+                    <img src="c.jpg" class="w-full h-40 sm:h-44 object-cover rounded-xl mb-3 sm:mb-4" alt="MathQuiz">
+                    <h4 class="font-bold text-base sm:text-lg mb-1">MathQuiz App</h4>
+                    <p class="text-xs text-gray-500 mb-3 sm:mb-4 italic">Kotlin/Java Android App</p>
                     <a href="https://www.tiktok.com/@enderson_iboy" target="_blank" class="text-xs font-bold text-blue-400 uppercase">View Demo</a>
                 </div>
 
-                <div class="project-card p-5 rounded-2xl">
-                    <img src="b.jpg" class="w-full h-44 object-cover rounded-xl mb-4" alt="Birdwatching">
-                    <h4 class="font-bold mb-1">Birdwatching Map App</h4>
-                    <p class="text-xs text-gray-500 mb-4 italic">Android / Mapbox SDK Integration</p>
-                    <span class="text-[10px] font-bold text-gray-600 uppercase">Interactive Markers</span>
+                <!-- Keep your other projects as-is, just with responsive tweaks -->
+                <div class="project-card p-4 sm:p-5 rounded-2xl">
+                    <img src="b.jpg" class="w-full h-40 sm:h-44 object-cover rounded-xl mb-3 sm:mb-4" alt="Birdwatching">
+                    <h4 class="font-bold text-base sm:text-lg mb-1">Birdwatching Map App</h4>
+                    <p class="text-xs text-gray-500 mb-3 sm:mb-4 italic">Android + Mapbox SDK</p>
+                    <span class="text-[10px] font-bold text-gray-600 uppercase">Interactive Map</span>
                 </div>
 
-                <div class="project-card p-5 rounded-2xl">
-                    <img src="m.jpg" class="w-full h-44 object-cover rounded-xl mb-4" alt="Location">
-                    <h4 class="font-bold mb-1">Real-time Location Tracker</h4>
-                    <p class="text-xs text-gray-500 mb-4 italic">GPS API Integration</p>
+                <div class="project-card p-4 sm:p-5 rounded-2xl">
+                    <img src="m.jpg" class="w-full h-40 sm:h-44 object-cover rounded-xl mb-3 sm:mb-4" alt="Location">
+                    <h4 class="font-bold text-base sm:text-lg mb-1">Real-time Location Tracker</h4>
+                    <p class="text-xs text-gray-500 mb-3 sm:mb-4 italic">GPS Integration</p>
                     <span class="text-[10px] font-bold text-gray-600 uppercase">Live Tracking</span>
                 </div>
 
-                <div class="project-card p-5 rounded-2xl">
-                    <img src="r.jpg" class="w-full h-44 object-cover rounded-xl mb-4" alt="Receipt">
-                    <h4 class="font-bold mb-1">Receipt Management Tool</h4>
-                    <p class="text-xs text-gray-400 mb-4 italic uppercase text-[10px] font-bold tracking-widest">Database CRUD System</p>
+                <div class="project-card p-4 sm:p-5 rounded-2xl">
+                    <img src="r.jpg" class="w-full h-40 sm:h-44 object-cover rounded-xl mb-3 sm:mb-4" alt="Receipt">
+                    <h4 class="font-bold text-base sm:text-lg mb-1">Receipt Management Tool</h4>
+                    <p class="text-xs text-gray-400 mb-3 sm:mb-4 italic uppercase font-bold tracking-widest">CRUD Database App</p>
                     <a href="https://www.linkedin.com/in/endy-mohlola-424221251" target="_blank" class="text-xs font-bold text-blue-400 uppercase">LinkedIn</a>
                 </div>
             </div>
-     
         </section>
 
-        <section id="contact" class="py-20 bg-gradient-to-b from-transparent to-blue-900/10 rounded-3xl border border-white/5">
-            <div class="max-w-2xl mx-auto px-6 text-center">
-                <h2 class="text-4xl font-black mb-4 text-white tracking-tighter uppercase italic">Secure Connection</h2>
-                <p class="text-gray-500 text-sm mb-12">I am currently available for high-level software consulting and enterprise development opportunities.</p>
+        <section id="contact" class="py-16 sm:py-20 bg-gradient-to-b from-transparent to-blue-900/10 rounded-3xl border border-white/5">
+            <div class="max-w-2xl mx-auto px-4 sm:px-6 text-center">
+                <h2 class="text-3xl sm:text-4xl font-black mb-4 text-white uppercase italic">Get in Touch</h2>
+                <p class="text-gray-500 text-sm mb-10 sm:mb-12">Open to software consulting, dev opportunities, and collaborations.</p>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
-                    <a href="mailto:deandie17@gmail.com" class="flex items-center justify-center gap-3 p-4 bg-[#161b22] border border-white/5 rounded-xl hover:border-blue-500 transition-all group">
-                        <i class="fas fa-envelope text-blue-500"></i>
-                        <span class="text-xs font-bold uppercase tracking-widest group-hover:text-blue-400">Email Office</span>
+                <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-10 sm:mb-12">
+                    <a href="mailto:deandie17@gmail.com" class="flex flex-col items-center justify-center gap-2 p-3 sm:p-4 bg-[#161b22] border border-white/5 rounded-xl hover:border-blue-500 transition-all group">
+                        <i class="fas fa-envelope text-blue-500 text-xl sm:text-2xl"></i>
+                        <span class="text-[10px] sm:text-xs font-bold uppercase group-hover:text-blue-400">Email</span>
                     </a>
-                    <a href="tel:+27714298172" class="flex items-center justify-center gap-3 p-4 bg-[#161b22] border border-white/5 rounded-xl hover:border-blue-500 transition-all group">
-                        <i class="fas fa-phone text-blue-500"></i>
-                        <span class="text-xs font-bold uppercase tracking-widest group-hover:text-blue-400">Direct Line</span>
+                    <a href="tel:+27714298172" class="flex flex-col items-center justify-center gap-2 p-3 sm:p-4 bg-[#161b22] border border-white/5 rounded-xl hover:border-blue-500 transition-all group">
+                        <i class="fas fa-phone text-blue-500 text-xl sm:text-2xl"></i>
+                        <span class="text-[10px] sm:text-xs font-bold uppercase group-hover:text-blue-400">Phone</span>
                     </a>
-                    <a href="https://www.linkedin.com/in/endy-mohlola-424221251" target="_blank" class="flex items-center justify-center gap-3 p-4 bg-[#161b22] border border-white/5 rounded-xl hover:border-blue-500 transition-all group">
-                        <i class="fab fa-linkedin text-blue-500"></i>
-                        <span class="text-xs font-bold uppercase tracking-widest group-hover:text-blue-400">LinkedIn Profile</span>
+                    <a href="https://www.linkedin.com/in/endy-mohlola-424221251" target="_blank" class="flex flex-col items-center justify-center gap-2 p-3 sm:p-4 bg-[#161b22] border border-white/5 rounded-xl hover:border-blue-500 transition-all group">
+                        <i class="fab fa-linkedin text-blue-500 text-xl sm:text-2xl"></i>
+                        <span class="text-[10px] sm:text-xs font-bold uppercase group-hover:text-blue-400">LinkedIn</span>
                     </a>
-                    <a href="https://www.upwork.com/freelancers/~016067ebd90dcde040" target="_blank" class="flex items-center justify-center gap-3 p-4 bg-[#161b22] border border-white/5 rounded-xl hover:border-blue-500 transition-all group">
-                        <i class="fas fa-briefcase text-blue-500"></i>
-                        <span class="text-xs font-bold uppercase tracking-widest group-hover:text-blue-400">Upwork Office</span>
+                    <a href="https://github.com/Iboy-xnetwork/" target="_blank" class="flex flex-col items-center justify-center gap-2 p-3 sm:p-4 bg-[#161b22] border border-white/5 rounded-xl hover:border-blue-500 transition-all group">
+                        <i class="fab fa-github text-blue-500 text-xl sm:text-2xl"></i>
+                        <span class="text-[10px] sm:text-xs font-bold uppercase group-hover:text-blue-400">GitHub</span>
                     </a>
                 </div>
 
                 <div class="inline-block relative group">
                     <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full blur opacity-25 group-hover:opacity-100 transition duration-1000"></div>
-                    <a href="CVU1.pdf" download class="relative px-12 py-5 bg-blue-600 text-white font-black uppercase text-xs tracking-[0.3em] rounded-full flex items-center gap-3 hover:bg-white hover:text-blue-600 transition-all">
-                        <i class="fas fa-file-download"></i> Download Senior Portfolio (PDF)
+                    <a href="CVU1.pdf" download class="relative px-8 sm:px-12 py-4 sm:py-5 bg-blue-600 text-white font-black uppercase text-xs sm:text-sm tracking-widest rounded-full flex items-center justify-center gap-2 sm:gap-3 hover:bg-white hover:text-blue-600 transition-all">
+                        <i class="fas fa-file-download"></i> Download CV (PDF)
                     </a>
                 </div>
             </div>
@@ -272,8 +270,8 @@
         <a href="#about" class="active">About</a>
         <a href="#skills">Skills</a>
         <a href="#experience">History</a>
-        <a href="#projects">Work</a>
-        <a href="#contact">Hire</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
     </nav>
 
     <script>
@@ -283,7 +281,7 @@
         window.addEventListener('scroll', () => {
             let current = '';
             sections.forEach(section => {
-                const sectionTop = section.offsetTop - 200;
+                const sectionTop = section.offsetTop - 150; // Adjusted for better mobile feel
                 if (pageYOffset >= sectionTop) current = section.getAttribute('id');
             });
             links.forEach(link => {
@@ -294,6 +292,3 @@
     </script>
 </body>
 </html>
-
-
-
