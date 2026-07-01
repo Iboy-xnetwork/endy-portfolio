@@ -223,12 +223,6 @@ export default function Certifications() {
         ))}
       </div>
 
-      <div className="mt-6 rounded-xl border border-dashed border-[#21262d] p-4">
-        <p className="text-xs text-gray-600 flex items-center gap-2">
-          <i className="fa-solid fa-plus text-gray-700" />
-          More certifications being added. Drop PDF in <code className="font-mono text-gray-500">public/</code> and add an entry here.
-        </p>
-      </div>
 
       <AnimatePresence>
         {selected && <CertModal cert={selected} onClose={() => setSelected(null)} />}

@@ -374,4 +374,4 @@ export const certifications = [
     year: null,
     icon: 'fa-solid fa-id-card',
   },
-]
+]  
