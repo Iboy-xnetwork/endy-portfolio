@@ -186,7 +186,7 @@ export default function Contact() {
 
       {/* ── CV download ── */}
       <motion.a
-        href="/Endy Mohlola-resume.pdf"
+        href="/Endy mohlola-resume.pdf"
         download
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
